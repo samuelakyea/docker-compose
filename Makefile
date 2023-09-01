@@ -6,4 +6,4 @@ k8s/temporal.yaml: docker-compose.yml
 
 k8s/temporal-%.yaml: docker-compose-%.yml
 	kompose convert -f $< -o $@
-	yq -i '(.items.[] | select(.kind == "Deployment") | .spec.template.spec.enableServiceLinks) = false' $@
+	yq -i '(.items.[] | select(.kind == "Deployment") | .spec.template.spec.enableServiceLinks) = false' $
